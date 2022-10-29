@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+button{
+    background-color: #333;
+    color: #eee;
+    margin: 200px auto;
+    padding: 10px 20px;
+    display: block;
+    font-size: 40px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+button span{
+    background-color: #eee;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    min-width: 250px;
+    padding: 10px 15px;
+    top: -55px;
+    transition: 0.5s;
+}
+
+button span::before{
+    content: '';
+    position: absolute;
+    bottom: -46%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-style: solid;
+    border-width: 10px;
+    border-color: #eee transparent transparent;
+}
+
+button:hover{
+    overflow: visible;
+}
+
+[data-position="bottom"] span {
+    /* top: unset;  */
+    top: auto; 
+    /* or I can make it auto */
+    bottom: -55px;
+}
+[data-position="bottom"] span::before {
+    bottom: 100%;
+    border-color: transparent transparent #eee;
+    
+}
